@@ -1,0 +1,267 @@
+{
+  "id": 9,
+  "campaign_id": 3,
+  "language_mode": "ur",
+  "status": "success",
+  "provider": "mock",
+  "model": "mock-v1",
+  "prompt_version": "generate_v1",
+  "error": null,
+  "latency_ms": 9100,
+  "created_at": "2026-11-28T15:20:05Z",
+  "posts": [
+    {
+      "id": 31,
+      "run_id": 9,
+      "platform": "linkedin",
+      "language_mode": "ur",
+      "text": "سردیوں کی آمد کے ساتھ چائے جنکشن لاہور کی ہر برانچ میں نیا ونٹر مینو پیش کر رہا ہے۔ یکم دسمبر سے کشمیری چائے، گڑ والی چائے اور دارچینی کافی دستیاب ہوں گی۔ اس ہفتے کے آخر میں کسی بھی برانچ تشریف لائیں۔",
+      "hashtags": [
+        "#Lahore",
+        "#WinterMenu"
+      ],
+      "char_count": 221,
+      "format_checks": [
+        {
+          "rule": "not_empty",
+          "passed": true,
+          "detail": "ok"
+        },
+        {
+          "rule": "max_chars",
+          "passed": true,
+          "detail": "221/3000"
+        },
+        {
+          "rule": "hashtag_count",
+          "passed": true,
+          "detail": "2/5"
+        },
+        {
+          "rule": "no_prohibited_phrase",
+          "passed": true,
+          "detail": "none found"
+        },
+        {
+          "rule": "cta_present",
+          "passed": true,
+          "detail": "CTA found"
+        },
+        {
+          "rule": "language_mode_match",
+          "passed": true,
+          "detail": "detected ur"
+        }
+      ],
+      "score": {
+        "total": 79.0,
+        "status": "experimental",
+        "dimensions": [
+          {
+            "name": "prohibited_phrases",
+            "score": 20,
+            "max": 20,
+            "explanation": "No prohibited phrases found"
+          },
+          {
+            "name": "platform_format",
+            "score": 20,
+            "max": 20,
+            "explanation": "All hard checks passed"
+          },
+          {
+            "name": "language_mode_match",
+            "score": 15,
+            "max": 15,
+            "explanation": "Detected language matches request"
+          },
+          {
+            "name": "brief_coverage",
+            "score": 15,
+            "max": 15,
+            "explanation": "CTA present; key message covered"
+          },
+          {
+            "name": "style_similarity",
+            "score": 9.0,
+            "max": 30,
+            "explanation": "Moderate wording overlap with brand examples"
+          }
+        ]
+      },
+      "edited": false,
+      "publish_status": "draft",
+      "created_at": "2026-11-28T15:20:05Z",
+      "updated_at": "2026-11-28T15:20:05Z"
+    },
+    {
+      "id": 32,
+      "run_id": 9,
+      "platform": "instagram",
+      "language_mode": "ur",
+      "text": "سردی آ گئی، چائے تیار ہے ☕ یکم دسمبر سے نیا ونٹر مینو! اس ہفتے کے آخر میں کسی بھی برانچ آئیں اور اپنے دوست کو ٹیگ کریں۔",
+      "hashtags": [
+        "#Lahore",
+        "#WinterMenu",
+        "#ChaiJunction"
+      ],
+      "char_count": 154,
+      "format_checks": [
+        {
+          "rule": "not_empty",
+          "passed": true,
+          "detail": "ok"
+        },
+        {
+          "rule": "max_chars",
+          "passed": true,
+          "detail": "154/2200"
+        },
+        {
+          "rule": "hashtag_count",
+          "passed": true,
+          "detail": "3/15"
+        },
+        {
+          "rule": "no_prohibited_phrase",
+          "passed": true,
+          "detail": "none found"
+        },
+        {
+          "rule": "cta_present",
+          "passed": true,
+          "detail": "CTA found"
+        },
+        {
+          "rule": "language_mode_match",
+          "passed": true,
+          "detail": "detected ur"
+        }
+      ],
+      "score": {
+        "total": 80.5,
+        "status": "experimental",
+        "dimensions": [
+          {
+            "name": "prohibited_phrases",
+            "score": 20,
+            "max": 20,
+            "explanation": "No prohibited phrases found"
+          },
+          {
+            "name": "platform_format",
+            "score": 20,
+            "max": 20,
+            "explanation": "All hard checks passed"
+          },
+          {
+            "name": "language_mode_match",
+            "score": 15,
+            "max": 15,
+            "explanation": "Detected language matches request"
+          },
+          {
+            "name": "brief_coverage",
+            "score": 15,
+            "max": 15,
+            "explanation": "CTA present; key message covered"
+          },
+          {
+            "name": "style_similarity",
+            "score": 10.5,
+            "max": 30,
+            "explanation": "Moderate wording overlap with brand examples"
+          }
+        ]
+      },
+      "edited": false,
+      "publish_status": "draft",
+      "created_at": "2026-11-28T15:20:05Z",
+      "updated_at": "2026-11-28T15:20:05Z"
+    },
+    {
+      "id": 33,
+      "run_id": 9,
+      "platform": "x",
+      "language_mode": "ur",
+      "text": "یکم دسمبر سے چائے جنکشن کا نیا ونٹر مینو ☕ اس ہفتے کے آخر میں کسی بھی برانچ آئیں!",
+      "hashtags": [
+        "#Lahore",
+        "#WinterMenu"
+      ],
+      "char_count": 102,
+      "format_checks": [
+        {
+          "rule": "not_empty",
+          "passed": true,
+          "detail": "ok"
+        },
+        {
+          "rule": "max_chars",
+          "passed": true,
+          "detail": "102/280"
+        },
+        {
+          "rule": "hashtag_count",
+          "passed": true,
+          "detail": "2/3"
+        },
+        {
+          "rule": "no_prohibited_phrase",
+          "passed": true,
+          "detail": "none found"
+        },
+        {
+          "rule": "cta_present",
+          "passed": true,
+          "detail": "CTA found"
+        },
+        {
+          "rule": "language_mode_match",
+          "passed": true,
+          "detail": "detected ur"
+        }
+      ],
+      "score": {
+        "total": 70.5,
+        "status": "experimental",
+        "dimensions": [
+          {
+            "name": "prohibited_phrases",
+            "score": 20,
+            "max": 20,
+            "explanation": "No prohibited phrases found"
+          },
+          {
+            "name": "platform_format",
+            "score": 20,
+            "max": 20,
+            "explanation": "All hard checks passed"
+          },
+          {
+            "name": "language_mode_match",
+            "score": 15,
+            "max": 15,
+            "explanation": "Detected language matches request"
+          },
+          {
+            "name": "brief_coverage",
+            "score": 7.5,
+            "max": 15,
+            "explanation": "CTA present; key message partly covered"
+          },
+          {
+            "name": "style_similarity",
+            "score": 8.0,
+            "max": 30,
+            "explanation": "Moderate wording overlap with brand examples"
+          }
+        ]
+      },
+      "edited": false,
+      "publish_status": "draft",
+      "created_at": "2026-11-28T15:20:05Z",
+      "updated_at": "2026-11-28T15:20:05Z"
+    }
+  ]
+}
