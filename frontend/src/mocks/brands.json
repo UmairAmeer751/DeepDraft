@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "name": "Chai Junction",
+    "industry": "Food & Beverage",
+    "audience": "Students and young professionals in Lahore",
+    "tone": ["warm", "playful"],
+    "language_preference": "roman_ur",
+    "guidelines": "Short sentences. Mention Lahore. Max 2 emojis.",
+    "prohibited_phrases": ["cheapest", "guaranteed"],
+    "example_posts": [
+      { "platform": "instagram", "text": "Barish aur chai = perfect shaam ☕🌧️" },
+      { "platform": "x", "text": "Lahore ki mornings sirf Chai Junction se start hoti hain." }
+    ],
+    "created_at": "2026-11-01T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "TechNova PK",
+    "industry": "Technology",
+    "audience": "Tech-savvy professionals and startups in Pakistan",
+    "tone": ["professional", "bold", "informative"],
+    "language_preference": "en",
+    "guidelines": "Be concise. Use data when possible. No jargon.",
+    "prohibited_phrases": ["revolutionary", "game-changer"],
+    "example_posts": [
+      { "platform": "linkedin", "text": "AI adoption in Pakistan grew 47% in 2025. Here's what that means for your business." }
+    ],
+    "created_at": "2026-11-05T08:30:00Z"
+  }
+]
