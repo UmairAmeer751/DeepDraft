@@ -1,0 +1,269 @@
+{
+  "id": 7,
+  "campaign_id": 3,
+  "language_mode": "en",
+  "status": "success",
+  "provider": "mock",
+  "model": "mock-v1",
+  "prompt_version": "generate_v1",
+  "error": null,
+  "latency_ms": 8400,
+  "created_at": "2026-11-28T15:02:11Z",
+  "posts": [
+    {
+      "id": 21,
+      "run_id": 7,
+      "platform": "linkedin",
+      "language_mode": "en",
+      "text": "Winter is here, and Chai Junction is ready for it. From 1 December, our new winter drinks menu arrives at every Lahore branch: kashmiri chai, gur wali chai and a cinnamon coffee made for long study nights.\n\nWe built this menu with students in mind: warm, affordable and quick to grab between classes.\n\nVisit any branch this weekend and tell us which drink should stay all year.",
+      "hashtags": [
+        "#Lahore",
+        "#WinterMenu",
+        "#ChaiJunction"
+      ],
+      "char_count": 412,
+      "format_checks": [
+        {
+          "rule": "not_empty",
+          "passed": true,
+          "detail": "ok"
+        },
+        {
+          "rule": "max_chars",
+          "passed": true,
+          "detail": "412/3000"
+        },
+        {
+          "rule": "hashtag_count",
+          "passed": true,
+          "detail": "3/5"
+        },
+        {
+          "rule": "no_prohibited_phrase",
+          "passed": true,
+          "detail": "none found"
+        },
+        {
+          "rule": "cta_present",
+          "passed": true,
+          "detail": "CTA found"
+        },
+        {
+          "rule": "language_mode_match",
+          "passed": true,
+          "detail": "detected en"
+        }
+      ],
+      "score": {
+        "total": 82.5,
+        "status": "experimental",
+        "dimensions": [
+          {
+            "name": "prohibited_phrases",
+            "score": 20,
+            "max": 20,
+            "explanation": "No prohibited phrases found"
+          },
+          {
+            "name": "platform_format",
+            "score": 20,
+            "max": 20,
+            "explanation": "All hard checks passed"
+          },
+          {
+            "name": "language_mode_match",
+            "score": 15,
+            "max": 15,
+            "explanation": "Detected language matches request"
+          },
+          {
+            "name": "brief_coverage",
+            "score": 15,
+            "max": 15,
+            "explanation": "CTA present; key message covered"
+          },
+          {
+            "name": "style_similarity",
+            "score": 12.5,
+            "max": 30,
+            "explanation": "Moderate wording overlap with brand examples"
+          }
+        ]
+      },
+      "edited": false,
+      "publish_status": "draft",
+      "created_at": "2026-11-28T15:02:11Z",
+      "updated_at": "2026-11-28T15:02:11Z"
+    },
+    {
+      "id": 22,
+      "run_id": 7,
+      "platform": "instagram",
+      "language_mode": "en",
+      "text": "Winter drinks are HERE ☕❄️ Kashmiri chai, gur wali chai and cinnamon coffee land at every Chai Junction from 1 Dec. Visit any branch this weekend and tag your study buddy!",
+      "hashtags": [
+        "#Lahore",
+        "#WinterMenu",
+        "#ChaiTime",
+        "#StudentLife"
+      ],
+      "char_count": 215,
+      "format_checks": [
+        {
+          "rule": "not_empty",
+          "passed": true,
+          "detail": "ok"
+        },
+        {
+          "rule": "max_chars",
+          "passed": true,
+          "detail": "215/2200"
+        },
+        {
+          "rule": "hashtag_count",
+          "passed": true,
+          "detail": "4/15"
+        },
+        {
+          "rule": "no_prohibited_phrase",
+          "passed": true,
+          "detail": "none found"
+        },
+        {
+          "rule": "cta_present",
+          "passed": true,
+          "detail": "CTA found"
+        },
+        {
+          "rule": "language_mode_match",
+          "passed": true,
+          "detail": "detected en"
+        }
+      ],
+      "score": {
+        "total": 86.0,
+        "status": "experimental",
+        "dimensions": [
+          {
+            "name": "prohibited_phrases",
+            "score": 20,
+            "max": 20,
+            "explanation": "No prohibited phrases found"
+          },
+          {
+            "name": "platform_format",
+            "score": 20,
+            "max": 20,
+            "explanation": "All hard checks passed"
+          },
+          {
+            "name": "language_mode_match",
+            "score": 15,
+            "max": 15,
+            "explanation": "Detected language matches request"
+          },
+          {
+            "name": "brief_coverage",
+            "score": 15,
+            "max": 15,
+            "explanation": "CTA present; key message covered"
+          },
+          {
+            "name": "style_similarity",
+            "score": 16.0,
+            "max": 30,
+            "explanation": "Moderate wording overlap with brand examples"
+          }
+        ]
+      },
+      "edited": false,
+      "publish_status": "draft",
+      "created_at": "2026-11-28T15:02:11Z",
+      "updated_at": "2026-11-28T15:02:11Z"
+    },
+    {
+      "id": 23,
+      "run_id": 7,
+      "platform": "x",
+      "language_mode": "en",
+      "text": "New winter drinks at Chai Junction from 1 Dec ☕ Kashmiri chai, gur wali chai, cinnamon coffee. Visit any branch this weekend!",
+      "hashtags": [
+        "#Lahore",
+        "#WinterMenu"
+      ],
+      "char_count": 146,
+      "format_checks": [
+        {
+          "rule": "not_empty",
+          "passed": true,
+          "detail": "ok"
+        },
+        {
+          "rule": "max_chars",
+          "passed": true,
+          "detail": "146/280"
+        },
+        {
+          "rule": "hashtag_count",
+          "passed": true,
+          "detail": "2/3"
+        },
+        {
+          "rule": "no_prohibited_phrase",
+          "passed": true,
+          "detail": "none found"
+        },
+        {
+          "rule": "cta_present",
+          "passed": true,
+          "detail": "CTA found"
+        },
+        {
+          "rule": "language_mode_match",
+          "passed": true,
+          "detail": "detected en"
+        }
+      ],
+      "score": {
+        "total": 74.0,
+        "status": "experimental",
+        "dimensions": [
+          {
+            "name": "prohibited_phrases",
+            "score": 20,
+            "max": 20,
+            "explanation": "No prohibited phrases found"
+          },
+          {
+            "name": "platform_format",
+            "score": 20,
+            "max": 20,
+            "explanation": "All hard checks passed"
+          },
+          {
+            "name": "language_mode_match",
+            "score": 15,
+            "max": 15,
+            "explanation": "Detected language matches request"
+          },
+          {
+            "name": "brief_coverage",
+            "score": 7.5,
+            "max": 15,
+            "explanation": "CTA present; key message partly covered"
+          },
+          {
+            "name": "style_similarity",
+            "score": 11.5,
+            "max": 30,
+            "explanation": "Moderate wording overlap with brand examples"
+          }
+        ]
+      },
+      "edited": false,
+      "publish_status": "draft",
+      "created_at": "2026-11-28T15:02:11Z",
+      "updated_at": "2026-11-28T15:02:11Z"
+    }
+  ]
+}
