@@ -147,6 +147,7 @@ class LLMProvider(Protocol):
 
 - `factory.get_provider()` picks the implementation from `LLM_PROVIDER` in `.env` (`mock` | `gemini`).
 - **MockProvider:** deterministic output for every platform × language mode; `MOCK_FAIL=<code>` simulates errors. All automated tests use it.
+- Prompt convention: every generation prompt contains the lines `PLATFORMS: ...`, `LANGUAGE_MODE: ...` and `CTA: ...`. The mock reads them; generate_v1.md (Z5) must include them.
 - **GeminiProvider:** hosted model for FYP-1. Model id comes from `LLM_MODEL`; recorded per run.
 - **FYP-2:** a `LlamaLoraProvider` (LLaMA 3 8B + QLoRA adapter) implements the same interface. Nothing else changes.
 
