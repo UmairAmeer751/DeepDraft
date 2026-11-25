@@ -1,0 +1,35 @@
+{
+  "id": 1,
+  "name": "Chai Junction (fictional demo)",
+  "industry": "Food & beverage",
+  "audience": "Students and young professionals in Lahore",
+  "tone": [
+    "warm",
+    "playful"
+  ],
+  "language_preference": "roman_ur",
+  "guidelines": "Short sentences. Mention Lahore. Max 2 emojis.",
+  "prohibited_phrases": [
+    "cheapest",
+    "guaranteed"
+  ],
+  "example_posts": [
+    {
+      "id": 1,
+      "platform": "instagram",
+      "text": "Barish aur chai = perfect shaam ☕ Aaj hi aayein!"
+    },
+    {
+      "id": 2,
+      "platform": "linkedin",
+      "text": "At Chai Junction, every cup is brewed fresh for Lahore's students and young professionals. Thank you for making us part of your day."
+    },
+    {
+      "id": 3,
+      "platform": "x",
+      "text": "Exam season? Chai Junction khula hai late tak ☕ #Lahore"
+    }
+  ],
+  "created_at": "2026-11-24T10:00:00Z",
+  "updated_at": "2026-11-24T10:00:00Z"
+}

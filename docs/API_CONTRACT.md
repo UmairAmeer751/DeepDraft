@@ -375,6 +375,7 @@ Example JSON for every response above lives in `docs/examples/`:
 - `campaign.json` — E8 response
 - `generation_run.json` — E9 response with all three platforms (includes one Urdu-script post)
 - `generation_run_failed.json` — E9 502 example
+- `generation_run_ur.json` — E9 response in Urdu script (for right-to-left UI testing)
 
 Umair copies these into `frontend/src/mocks/` and builds against them while `VITE_USE_MOCK=true`. A backend test validates each fixture against the Pydantic schemas, so fixtures cannot drift from the code.
 
