@@ -1,0 +1,1 @@
+D-004 (25 Nov 2026): FYP-1 hosted LLM = Gemini API, model <model id>, via google-genai SDK, free tier. Only fictional demo brands and test briefs are sent (free-tier inputs may be used by Google).
