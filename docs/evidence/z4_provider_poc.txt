@@ -1,0 +1,72 @@
+python ..\scripts\try_provider.py
+Latency: 2822.9 ms
+{
+  "posts": [
+    {
+      "platform": "linkedin",
+      "text": "As the winter chill sets in, Chai Junction (fictional demo) is proud to introduce our new seasonal corporate and professional networking lounge menu. Boost your productivity with our artisanal spiced chais and gourmet winter pastries, designed to keep you warm and focused during those early morning strategy sessions. Visit us today and elevate your workday.",
+      "hashtags": [
+        "ChaiJunction",
+        "WinterMenu",
+        "CorporateWellness",
+        "CafeCulture",
+        "Networking"
+      ]
+    },
+    {
+      "platform": "instagram",
+      "text": "Winter magic is brewing at Chai Junction (fictional demo)! ☕✨ Come wrap your hands around a steaming cup of our new Gingerbread Chai or Cardamom Hot Chocolate, paired perfectly with our freshly baked cinnamon rolls. Tag a friend you want to share a cozy winter date with! 🥰❄️",
+      "hashtags": [
+        "ChaiJunction",
+        "WinterVibes",
+        "ChaiLovers",
+        "CozyCafe",
+        "SeasonalMenu",
+        "HotChocolate"
+      ]
+    },
+    {
+      "platform": "x",
+      "text": "Winter is here, and so is our brand new seasonal menu at Chai Junction (fictional demo)! Stop by today to try our signature spiced chais and warm pastries. Beat the cold in style. ☕❄️ #ChaiJunction #WinterMenu #ChaiTime",
+      "hashtags": [
+        "ChaiJunction",
+        "WinterMenu",
+        "ChaiTime"
+      ]
+    }
+  ]
+}
+Latency: 1641.4 ms
+{
+  "posts": [
+    {
+      "platform": "linkedin",
+      "text": "چائے جنکشن میں اس سردی کے موسم کو خوش آمدید کہیں۔ ہمارے پیشہ ور ماحول میں بیٹھ کر اپنے پسندیدہ گرم مشروبات سے لطف اندوز ہوں اور اپنی کاروباری میٹنگز کو مزید گرمجوشی بخشیں۔",
+      "hashtags": [
+        "ChaiJunction",
+        "WinterMenu",
+        "CafeLife",
+        "Networking"
+      ]
+    },
+    {
+      "platform": "instagram",
+      "text": "سردیوں کی ٹھنڈی شاموں کو بنائیں مزیدار! چائے جنکشن کا نیا ونٹر مینو اب دستیاب ہے۔ گرما گرم چائے اور لذیذ اسنیکس کے ساتھ اپنے دوستوں کے ساتھ یادگار لمحات گزاریں۔",
+      "hashtags": [
+        "ChaiJunction",
+        "WinterVibes",
+        "DesiTea",
+        "CafeGram"
+      ]
+    },
+    {
+      "platform": "x",
+      "text": "سردی بڑھ گئی ہے؟ چائے جنکشن آئیں اور ہمارے نئے ونٹر مینو سے اپنی روح کو گرما دیں۔ آج ہی وزٹ کریں!",
+      "hashtags": [
+        "ChaiJunction",
+        "WinterIsHere",
+        "TeaLovers"
+      ]
+    }
+  ]
+}
