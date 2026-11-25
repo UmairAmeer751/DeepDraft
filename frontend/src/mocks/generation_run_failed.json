@@ -1,0 +1,6 @@
+{
+  "detail": {
+    "code": "rate_limited",
+    "message": "The LLM provider rate limit was reached. Wait a minute and try again."
+  }
+}

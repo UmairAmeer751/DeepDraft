@@ -107,10 +107,10 @@ export default function HistoryPage() {
                     })}
                   </td>
                   <td className="px-4 py-3">
-                    {c.latest_run ? (
-                      <RunBadge status={c.latest_run.status} />
+                    {c.latest_run_status ? (
+                      <RunBadge status={c.latest_run_status} />
                     ) : (
-                      <span className="text-xs text-gray-600">No run</span>
+                      <span className="text-xs text-gray-600">No run yet</span>
                     )}
                   </td>
                   <td className="px-4 py-3 text-right">

@@ -14,7 +14,9 @@ export default function PostCard({ post, onUpdate, onSimulatePublish }) {
 
   const isUrdu = post.language_mode === 'ur'
   const limit = PLATFORM_LIMITS[post.platform] ?? 2200
-  const charCount = editText.length
+  const tags = editHashtags.split(/\s+/).filter(Boolean)
+  const tagStr = tags.join(' ')
+  const charCount = editText.length + (tagStr.length > 0 ? tagStr.length + 1 : 0)
   const overLimit = charCount > limit
 
   function handleEdit() {

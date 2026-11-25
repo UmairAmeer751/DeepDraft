@@ -15,13 +15,12 @@ export default function CampaignPage() {
   const [generating, setGenerating] = useState(false)
   const [genError, setGenError] = useState(null)
   const [toast, setToast] = useState(null)
-  const [selectedRunIndex, setSelectedRunIndex] = useState(0)
 
   // Load campaign
   useEffect(() => {
     setLoading(true)
     api.getCampaign(id)
-      .then((c) => { setCampaign(c); setSelectedRunIndex(0) })
+      .then((c) => setCampaign(c))
       .catch((e) => setFetchError(e.message))
       .finally(() => setLoading(false))
   }, [id])
@@ -30,14 +29,9 @@ export default function CampaignPage() {
     setGenerating(true)
     setGenError(null)
     try {
-      const run = await api.generate(id, languageMode || campaign.language_mode)
-      setCampaign((c) => ({
-        ...c,
-        latest_run: run,
-        runs: [run, ...(c.runs || [])],
-        language_mode: languageMode || c.language_mode,
-      }))
-      setSelectedRunIndex(0)
+      await api.generate(id, languageMode || campaign.language_mode)
+      const reloaded = await api.getCampaign(id)
+      setCampaign(reloaded)
     } catch (err) {
       setGenError(err)
     } finally {
@@ -46,9 +40,11 @@ export default function CampaignPage() {
   }
 
   async function handleExport(format) {
+    const runId = campaign?.latest_run?.id
+    if (!runId) return
     if (import.meta.env.VITE_USE_MOCK === 'true') {
       try {
-        const content = await api.exportMock(id, format)
+        const content = await api.exportMock(id, format, runId)
         const mime = format === 'json' ? 'application/json' : 'text/plain'
         const ext = format
         const blob = new Blob([content], { type: mime })
@@ -62,19 +58,19 @@ export default function CampaignPage() {
         setToast({ type: 'error', message: err.message })
       }
     } else {
-      window.open(api.exportUrl(id, format), '_blank')
+      window.open(api.exportUrl(id, format, runId), '_blank')
     }
   }
 
   function handlePostUpdate(updatedPost) {
     setCampaign((c) => {
-      const run = c.latest_run
-      if (!run) return c
+      const run = c?.latest_run
+      if (!run || !run.posts) return c
       return {
         ...c,
         latest_run: {
           ...run,
-          posts: run.posts.map((p) => (p.id === updatedPost.id ? updatedPost : p)),
+          posts: run.posts.map((p) => (p.id === updatedPost.id ? { ...p, ...updatedPost } : p)),
         },
       }
     })
@@ -102,9 +98,6 @@ export default function CampaignPage() {
 
   if (!campaign) return null
 
-  const currentRun = campaign.runs?.[selectedRunIndex] ?? campaign.latest_run
-  const allRuns = campaign.runs ?? (campaign.latest_run ? [campaign.latest_run] : [])
-
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       {toast && <Toast {...toast} onClose={() => setToast(null)} />}
@@ -125,7 +118,7 @@ export default function CampaignPage() {
           </div>
 
           {/* Export buttons */}
-          {currentRun?.posts?.length > 0 && (
+          {campaign.latest_run?.posts?.length > 0 && (
             <div className="flex gap-2 flex-wrap">
               {['txt', 'md', 'json'].map((fmt) => (
                 <button
@@ -155,7 +148,7 @@ export default function CampaignPage() {
                 <span>Generating drafts…</span>
               </>
             ) : (
-              <>✨ {currentRun ? 'Regenerate' : 'Generate'}</>
+              <>✨ {campaign.latest_run ? 'Regenerate' : 'Generate'}</>
             )}
           </button>
 
@@ -182,8 +175,16 @@ export default function CampaignPage() {
         <ErrorCard message={genError.message} onRetry={() => handleGenerate(null)} />
       )}
 
+      {/* Failed run error */}
+      {campaign.latest_run?.status === 'failed' && (
+        <ErrorCard
+          message={campaign.latest_run.error?.message || 'Generation failed'}
+          onRetry={() => handleGenerate(null)}
+        />
+      )}
+
       {/* Partial warning */}
-      {currentRun?.status === 'partial' && (
+      {campaign.latest_run?.status === 'partial' && (
         <div className="p-3 rounded-lg bg-yellow-900/30 border border-yellow-800/50">
           <p className="text-sm text-yellow-400">
             ⚠ Some drafts failed a format check — review before using.
@@ -192,15 +193,19 @@ export default function CampaignPage() {
       )}
 
       {/* Run switcher (if multiple runs) */}
-      {allRuns.length > 1 && (
+      {campaign.runs?.length > 1 && (
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-xs text-gray-500">View run:</span>
-          {allRuns.map((run, i) => (
+          {campaign.runs.map((run, i) => (
             <button
               key={run.id}
-              onClick={() => setSelectedRunIndex(i)}
+              onClick={() => {
+                if (campaign.latest_run?.id !== run.id) {
+                  api.getCampaign(id, run.id).then(setCampaign).catch((e) => setFetchError(e.message))
+                }
+              }}
               className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${
-                i === selectedRunIndex
+                run.id === campaign.latest_run?.id
                   ? 'bg-violet-600/20 text-violet-300 border-violet-700/50'
                   : 'bg-gray-900 text-gray-400 border-gray-700 hover:border-gray-600'
               }`}
@@ -215,9 +220,9 @@ export default function CampaignPage() {
       )}
 
       {/* Posts */}
-      {currentRun?.posts?.length > 0 ? (
+      {campaign.latest_run?.posts?.length > 0 ? (
         <div className="space-y-4">
-          {currentRun.posts.map((post) => (
+          {campaign.latest_run.posts.map((post) => (
             <PostCard
               key={post.id}
               post={post}
@@ -226,7 +231,7 @@ export default function CampaignPage() {
             />
           ))}
         </div>
-      ) : currentRun === null && !generating ? (
+      ) : campaign.latest_run === null && !generating ? (
         <div className="text-center py-16 rounded-xl border border-dashed border-gray-800">
           <div className="text-4xl mb-3">✨</div>
           <p className="text-gray-400 text-sm">Click Generate to create platform-specific posts</p>

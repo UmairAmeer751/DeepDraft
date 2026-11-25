@@ -39,8 +39,11 @@ export default function DashboardPage() {
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-sm text-gray-300">
               Backend <span className="text-emerald-400 font-medium">online</span>
-              {health.model && (
-                <span className="text-gray-500 ml-2">· {health.model}</span>
+              {health.db && (
+                <span className="text-gray-500 ml-2">· DB: {health.db}</span>
+              )}
+              {import.meta.env.VITE_USE_MOCK === 'true' && (
+                <span className="text-gray-500 ml-2">· mock mode</span>
               )}
             </span>
           </>
@@ -49,7 +52,9 @@ export default function DashboardPage() {
             <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
             <span className="text-sm text-gray-300">
               Backend <span className="text-red-400 font-medium">offline</span>
-              <span className="text-gray-500 ml-2">— running in mock mode</span>
+              {import.meta.env.VITE_USE_MOCK === 'true' && (
+                <span className="text-gray-500 ml-2">— running in mock mode</span>
+              )}
             </span>
           </>
         ) : (
@@ -77,9 +82,9 @@ export default function DashboardPage() {
           to="/campaigns"
         />
         <StatCard
-          label="Posts Generated"
-          value={loading ? '—' : campaigns.reduce((n, c) => n + (c.latest_run?.posts?.length ?? 0), 0)}
-          sub="across all runs"
+          label="Runs completed"
+          value={loading ? '—' : campaigns.filter((c) => c.latest_run_status !== null).length}
+          sub="across campaigns"
           color="emerald"
           to="/campaigns"
         />
@@ -129,8 +134,8 @@ export default function DashboardPage() {
                   <span className="text-xs text-gray-500 ml-2">· {c.brand_name}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  {c.latest_run ? (
-                    <RunStatusBadge status={c.latest_run.status} />
+                  {c.latest_run_status ? (
+                    <RunStatusBadge status={c.latest_run_status} />
                   ) : (
                     <span className="text-xs text-gray-600">No run yet</span>
                   )}
