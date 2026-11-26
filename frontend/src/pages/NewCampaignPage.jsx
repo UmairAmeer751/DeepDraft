@@ -35,23 +35,31 @@ export default function NewCampaignPage() {
       setBrands(b)
       // If a brand was preselected, prefill its audience
       if (preselectedBrandId) {
-        const brand = b.find((x) => String(x.id) === String(preselectedBrandId))
-        if (brand?.audience) {
-          setForm((f) => ({ ...f, audience: brand.audience }))
-        }
+        api.getBrand(preselectedBrandId)
+          .then((brand) => {
+            if (brand?.audience) {
+              setForm((f) => ({ ...f, audience: brand.audience }))
+            }
+          })
+          .catch(() => {})
       }
     })
   }, [preselectedBrandId])
 
   // Auto-fill audience when brand changes
-  function handleBrandChange(brandId) {
-    const brand = brands.find((b) => String(b.id) === String(brandId))
-    setForm((f) => ({
-      ...f,
-      brand_id: brandId,
-      audience: brand?.audience ?? f.audience,
-    }))
+  async function handleBrandChange(brandId) {
+    setForm((f) => ({ ...f, brand_id: brandId }))
     clearErr('brand_id')
+    if (!brandId) return
+
+    try {
+      const brand = await api.getBrand(brandId)
+      if (brand?.audience) {
+        setForm((f) => ({ ...f, audience: brand.audience }))
+      }
+    } catch {
+      // Leave audience unchanged on error
+    }
   }
 
   function togglePlatform(id) {
